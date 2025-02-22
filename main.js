@@ -14,7 +14,7 @@ canvas.addEventListener('mousemove', (event)=>{
 	player.setPosition(mouseY);
 });
 
-const spawner = new AsteroidSpawner();
+const spawner = new AsteroidSpawner(ctx,player);
 
 let lastTime = 0;
 function update(time){
@@ -23,6 +23,7 @@ function update(time){
 	lastTime = time;
 	player.update(deltaTime);
 	spawner.update(deltaTime);
+	spawner.draw();
 	window.requestAnimationFrame(update);
 }
 
