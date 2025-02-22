@@ -7,10 +7,22 @@
 
 /* Header Styles */
 header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
   background-color: #e8c996; 
-  color: #fff;
-  padding: 5px;
-  text-align: center;
+  color: #242424;
+  padding: 20px;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.header-right p {
+  margin: 0;
+  font-size: 1em;
 }
 
 /* Body Styles */
