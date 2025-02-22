@@ -19,16 +19,19 @@ const spawner = new AsteroidSpawner(ctx,player);
 
 let lastTime = 0;
 let gameState = "start";
+let score = 0;
 
 spawner.setOnCollisionCallback(()=>{
 	gameState = "gameOver";
 })
 canvas.addEventListener("click", (event)=>{
-	if(gameState === "start"){
+	if(gameState ==="gameLoop"){
+		player.shoot();
+	}
+	else if(gameState === "start"){
 		gameState = "gameLoop";
 	}
-
-	if(gameState ==="gameOver"){
+	else if(gameState ==="gameOver"){
 		gameState = "gameLoop";
 		spawner.restart();
 	}
@@ -42,8 +45,15 @@ function startScreen(){
 	ctx.strokeText("Click the screen to start", canvas.width / 2 -200, canvas.height / 2, 400);
 }
 
+
 function gameLoopScreen(time){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	ctx.strokeStyle = "red";  
+	ctx.lineWidth = 2;  
+	ctx.font = "35px serif";
+	ctx.strokeText(`Score : ${score}`, canvas.width/2 -50, 30, 200);
+
 	const deltaTime = time - lastTime;
 	lastTime = time;
 	player.update(deltaTime);

@@ -5,10 +5,18 @@ class Player {
 	  this.y = 400;
 	  this.ctx = ctx;
 	  this.velocityY = 0;
+	  this.shootingCooldown = 0;
+	  this.bullets = [];
 	}
   
 	update(deltaTime) {
 	  this.draw();
+	  this.shootingCooldown += deltaTime;
+		for(let i = 0; i< this.bullets.length; i++){
+			const bullet = this.bullets[i];
+			bullet.update(deltaTime);
+			bullet.draw();
+		}
 	}
   
 	draw() {
@@ -48,4 +56,45 @@ class Player {
 	setPosition(pos) {
 	  this.y = pos;
 	}
+
+	shoot(){
+		if(this.shootingCooldown < 200){return;}
+
+		this.shootingCooldown = 0;
+		let bullet = new Bullet(this.x, this.y);
+
+		bullet.setOnDestroy( ()=>{
+			let index = this.bullets.indexOf(bullet);	
+			this.bullets.splice(index,1);
+		});
+		this.bullets.push(bullet)
+
+	}
   }
+
+
+class Bullet{
+	constructor(x, y){
+		this.x = x;
+		this.y = y;
+	}
+	update(time){
+		this.x += time *0.6;
+		if(this.x > 800){
+			this.onDestroy();
+		}
+	}
+
+	draw(){
+		
+	  ctx.beginPath();
+	  ctx.rect(this.x - 35, this.y - 12, 15, 15);
+	  ctx.fillStyle = "Green"; 
+	  ctx.fill();
+	  ctx.stroke();
+	}
+
+	setOnDestroy(callBack){
+		this.onDestroy = callBack;	
+	}
+}
