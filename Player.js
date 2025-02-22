@@ -6,7 +6,7 @@ class Player{
 		this.ctx = ctx;
 	}
 
-	update(time){
+	update(deltaTime){
 
 	}
 
