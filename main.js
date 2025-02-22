@@ -1,11 +1,20 @@
-let c = document.getElementById("gameCanvas");
-let ctx = c.getContext("2d");
-console.log(ctx);
-ctx.fillStyle = "red";
-ctx.fillRect(20, 20, 75, 50);
-ctx.globalAlpha = 0.2;
-ctx.fillStyle = "blue";
-ctx.fillRect(50, 50, 75, 50);
-ctx.fillStyle = "green";
-ctx.fillRect(80, 80, 75, 50);
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
 
+
+const player = new Player(ctx);
+
+canvas.addEventListener('click', player.onClick);
+
+let lastTime = 0;
+function update(time){
+	const deltaTime = time - lastTime;
+	lastTime = time;
+	player.update(deltaTime);
+	window.requestAnimationFrame(update);
+}
+
+
+window.requestAnimationFrame((time)=>{
+	update(time);
+});
