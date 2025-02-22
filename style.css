@@ -1,7 +1,7 @@
 /* Basic CSS Reset */
 * {
     margin: 0;
-    padding: 0;
+   padding: 0;
     box-sizing: border-box;
   }
   
@@ -12,17 +12,11 @@
     color: #333;
   }
   
-  /* Container for the Canvas */
-  .canvas-container {
-    width: 80%;
-    margin: 30px auto;
-    text-align: center;
-  }
   
   /* Canvas Styling */
   canvas {
     border: 1px solid #ccc;
     background: #fff;
-    width: 100%;
-    height: auto;
+    width: 800px;
+    height: 800px;
   }
