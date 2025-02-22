@@ -14,8 +14,8 @@ class Player{
 
 	draw(){
 		ctx.beginPath();
-		ctx.arc(this.x,this.y,40,0,Math.PI*2);
-		ctx.fillStyle = "green";
+		ctx.rect(this.x - 40, this.y - 40, 80, 80);
+		ctx.fillStyle = "purple";
 		ctx.fill();
 		ctx.stroke();
 	}
