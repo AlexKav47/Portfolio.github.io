@@ -38,7 +38,7 @@ body {
 /* Canvas Styling */
 canvas {
   border: 1px solid #ccc;
-  background: #fff;
+  background: url('Images/Game_Background.jpg') no-repeat center center fixed;
   width: 500px;
   height: 500px;
   margin-left: auto;
