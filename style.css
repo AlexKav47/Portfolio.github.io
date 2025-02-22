@@ -7,9 +7,9 @@
 
   /* Header Styles */
   header {
-    background-color: #333; 
+    background-color: #e8c996; 
     color: #fff;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
   }
   
@@ -33,4 +33,6 @@
     margin-right: auto;
     display: block;
     padding-bottom: 50;
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
