@@ -16,13 +16,55 @@ class Asteroid{
 		}
 	}
 
-	draw(){
+	draw() {
+		const r = this.radius; 
+		
+		// Draw an irregular asteroid outline using lines
 		ctx.beginPath();
-		ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
-		ctx.fillStyle = "red";
+		// Rightmost point
+		ctx.moveTo(this.x + r, this.y);
+		// Top right with a slight irregularity
+		ctx.lineTo(this.x + 0.6 * r, this.y - 0.8 * r);
+		// Top left with a slight twist
+		ctx.lineTo(this.x - 0.4 * r, this.y - 0.9 * r);
+		// Leftmost point
+		ctx.lineTo(this.x - r, this.y);
+		// Bottom left with a bulge
+		ctx.lineTo(this.x - 0.5 * r, this.y + 0.9 * r);
+		// Bottom right
+		ctx.lineTo(this.x + 0.5 * r, this.y + 0.8 * r);
+		ctx.closePath();
+		
+		// Fill and stroke the asteroid outline with grey tones
+		ctx.fillStyle = "#808080";   
+		ctx.fill();
+		ctx.strokeStyle = "#4d4d4d"; 
+		ctx.stroke();
+		
+		
+		
+		// Crater 1: near the top right
+		ctx.beginPath();
+		ctx.arc(this.x + 0.4 * r, this.y - 0.3 * r, 0.15 * r, 0, Math.PI * 2);
+		ctx.fillStyle = "#696969";   
 		ctx.fill();
 		ctx.stroke();
-	}
+		
+		// Crater 2: near the bottom left
+		ctx.beginPath();
+		ctx.arc(this.x - 0.3 * r, this.y + 0.3 * r, 0.1 * r, 0, Math.PI * 2);
+		ctx.fillStyle = "#696969";
+		ctx.fill();
+		ctx.stroke();
+		
+		// Crater 3: near the center left
+		ctx.beginPath();
+		ctx.arc(this.x - 0.2 * r, this.y, 0.12 * r, 0, Math.PI * 2);
+		ctx.fillStyle = "#696969";
+		ctx.fill();
+		ctx.stroke();
+	  }
+	  
 	
 
 	onDestroy(callBack){

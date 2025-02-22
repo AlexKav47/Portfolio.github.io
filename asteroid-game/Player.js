@@ -20,39 +20,46 @@ class Player {
 	}
   
 	draw() {
-	  const ctx = this.ctx;
+		const ctx = this.ctx;
+		
+		// Spaceship Body 
+		ctx.beginPath();
+		ctx.moveTo(this.x + 50, this.y);                
+		ctx.lineTo(this.x + 45, this.y - 4);              
+		ctx.lineTo(this.x + 15, this.y - 14);             
+		ctx.lineTo(this.x - 10, this.y - 14);             
+		ctx.lineTo(this.x - 25, this.y - 4);             
+		ctx.lineTo(this.x - 30, this.y);                  
+		ctx.lineTo(this.x - 25, this.y + 4);             
+		ctx.lineTo(this.x - 10, this.y + 14);             
+		ctx.lineTo(this.x + 15, this.y + 14);             
+		ctx.lineTo(this.x + 45, this.y + 4);             
+		ctx.closePath();
+		
+		ctx.fillStyle = "#000000";  
+		ctx.fill();
+		ctx.strokeStyle = "#006400";  
+		ctx.lineWidth = 2;
+		ctx.stroke();
+		
+		// Spaceship Window 
+		ctx.beginPath();
+		ctx.rect(this.x + 10, this.y - 6, 10, 4);
+		ctx.fillStyle = "#000000";  
+		ctx.fill();
+		ctx.strokeStyle = "#006400";  
+		ctx.stroke();
+		
+		// Spaceship Thrusters
+		ctx.beginPath();
+		ctx.rect(this.x - 38, this.y - 4, 4, 4);
+		ctx.rect(this.x - 38, this.y + 4, 4, 4);
+		ctx.fillStyle = "#000000";  
+		ctx.fill();
+		ctx.strokeStyle = "#006400";  
+		ctx.stroke();
+	  }
 	  
-	  // Spaceship Body
-	  ctx.beginPath();
-	  ctx.moveTo(this.x + 50, this.y);
-	  ctx.lineTo(this.x + 20, this.y - 15);
-	  ctx.lineTo(this.x - 10, this.y - 15);
-	  ctx.lineTo(this.x - 30, this.y - 25);
-	  ctx.lineTo(this.x - 30, this.y + 25);
-	  ctx.lineTo(this.x - 10, this.y + 15);
-	  ctx.lineTo(this.x + 20, this.y + 15);
-	  ctx.closePath();
-	  ctx.fillStyle = "#FF00FF"; 
-	  ctx.fill();
-	  ctx.strokeStyle = "black";
-	  ctx.stroke();
-	  
-	  // Spaceship Window
-	  ctx.beginPath();
-	  ctx.rect(this.x + 10, this.y - 10, 12, 8);
-	  ctx.fillStyle = "#00FFFF"; 
-	  ctx.fill();
-	  ctx.stroke();
-	  
-	  // Spaceship Thrusters
-	  ctx.beginPath();
-	  ctx.rect(this.x - 35, this.y - 12, 4, 4);
-	  ctx.rect(this.x - 35, this.y + 8, 4, 4);
-	  ctx.fillStyle = "#FFA500"; 
-	  ctx.fill();
-	  ctx.stroke();
-	}
-  
 	setPosition(pos) {
 	  this.y = pos;
 	}
@@ -85,14 +92,20 @@ class Bullet{
 		}
 	}
 
-	draw(){
-		
-	  ctx.beginPath();
-	  ctx.rect(this.x - 35, this.y - 12, 15, 15);
-	  ctx.fillStyle = "Green"; 
-	  ctx.fill();
-	  ctx.stroke();
-	}
+	draw() {
+		ctx.save();
+	
+		ctx.beginPath();
+	
+		ctx.shadowColor = "rgba(255, 0, 0, 0.8)";
+		ctx.shadowBlur = 15;
+	
+		ctx.fillStyle = "red";
+	
+		ctx.fillRect(this.x - 10, this.y - 2, 20, 4);
+	
+		ctx.restore();
+	  }
 
 	setOnDestroy(callBack){
 		this.onDestroy = callBack;	

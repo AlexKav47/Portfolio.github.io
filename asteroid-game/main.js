@@ -39,7 +39,7 @@ canvas.addEventListener("click", (event)=>{
 });
 
 function startScreen(){
-	ctx.strokeStyle = "red";  
+	ctx.strokeStyle = "green";  
 	ctx.lineWidth = 2;  
 	ctx.font = "50px serif";
 	ctx.strokeText("Click the screen to start", canvas.width / 2 -200, canvas.height / 2, 400);
@@ -49,7 +49,7 @@ function startScreen(){
 function gameLoopScreen(time){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	ctx.strokeStyle = "red";  
+	ctx.strokeStyle = "green";  
 	ctx.lineWidth = 2;  
 	ctx.font = "35px serif";
 	ctx.strokeText(`Score : ${score}`, canvas.width/2 -50, 30, 200);
@@ -62,7 +62,7 @@ function gameLoopScreen(time){
 }
 
 function gameOverScreen(){
-	ctx.strokeStyle = "red";  
+	ctx.strokeStyle = "green";  
 	ctx.lineWidth = 2;  
 	ctx.font = "50px serif";
 	ctx.strokeText("Game Over Try Again", canvas.width / 2 -200, canvas.height / 2, 400);
