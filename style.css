@@ -1,38 +1,38 @@
 /* Basic CSS Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* Header Styles */
-  header {
-    background-color: #e8c996; 
-    color: #fff;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  /* Body Styles */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    background: url('Images/Website_Bakgroun.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  
-  /* Canvas Styling */
-  canvas {
-    border: 1px solid #ccc;
-    background: #fff;
-    width: 500px;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-bottom: 50;
-    margin-top: 3%;
-    margin-bottom: 3%;
-  }
+/* Header Styles */
+header {
+  background-color: #e8c996; 
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  background: url('Images/Website_Bakgroun.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* Canvas Styling */
+canvas {
+  border: 1px solid #ccc;
+  background: #fff;
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-bottom: 50;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
