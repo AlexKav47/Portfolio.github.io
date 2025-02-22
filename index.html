@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-	<a href="asteroid-game/index.html">Game</a>
+  <header>
+    <div class="container header-container">
+      <h1>My Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Introduction Section -->
+    <section id="intro">
+      <div class="container">
+        <h2>Welcome</h2>
+        <p>
+          Hello! I’m a passionate developer with a collection of creative projects I’ve built in my spare time. Explore my work below and get in touch if you like what you see!
+        </p>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <a href="asteroid-game/index.html" class="project-card">
+            <h3>Asteroid Game</h3>
+            <p>A retro-styled arcade game built with JavaScript, HTML, and CSS.</p>
+			<img src="images/Screenshot_Asteroid_Game.jpg" alt="Description of the image"> 
+          </a>
+          <a href="https://google.com" class="project-card">
+            <h3>Project 2</h3>
+            <p>Description of project 2</p>
+          </a>
+          <!-- Additional project cards can be added here -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I’m a self-taught developer who loves exploring new technologies and building innovative projects. I focus on blending design with clean code to create engaging digital experiences.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Interested in working together? Drop me an email at <a href="mailto:youremail@example.com">youremail@example.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
+
