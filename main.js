@@ -14,6 +14,9 @@ canvas.addEventListener('mousemove', (event)=>{
 	player.setPosition(mouseY);
 });
 
+
+const asteroids = Asteroid[10];
+
 let lastTime = 0;
 function update(time){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
