@@ -39,6 +39,7 @@ body {
 canvas {
   border: 1px solid #ccc;
   background: url('Images/Game_Background.jpg') no-repeat center center fixed;
+  background-size:contain;
   width: 500px;
   height: 500px;
   margin-left: auto;
