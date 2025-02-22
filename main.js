@@ -18,15 +18,24 @@ canvas.addEventListener('mousemove', (event)=>{
 const spawner = new AsteroidSpawner(ctx,player);
 
 let lastTime = 0;
-var gameState = "start";
+let gameState = "start";
+
+spawner.setOnCollisionCallback(()=>{
+	gameState = "gameOver";
+})
 canvas.addEventListener("click", (event)=>{
 	if(gameState === "start"){
 		gameState = "gameLoop";
 	}
 
+	if(gameState ==="gameOver"){
+		gameState = "gameLoop";
+		spawner.restart();
+	}
+
 });
 
-function startScreen(time){
+function startScreen(){
 	ctx.strokeStyle = "red";  
 	ctx.lineWidth = 2;  
 	ctx.font = "50px serif";
@@ -42,17 +51,23 @@ function gameLoopScreen(time){
 	spawner.draw();
 }
 
-function gameOverScreen(time){
-
+function gameOverScreen(){
+	ctx.strokeStyle = "red";  
+	ctx.lineWidth = 2;  
+	ctx.font = "50px serif";
+	ctx.strokeText("Game Over Try Again", canvas.width / 2 -200, canvas.height / 2, 400);
 }
 
 
 function update(time){
 	if(gameState == "start"){
-		startScreen(time);
+		startScreen();
 	}
 	else if(gameState == "gameLoop"){
 		gameLoopScreen(time);
+	}
+	else{
+		gameOverScreen();
 	}
 	window.requestAnimationFrame(update);
 }

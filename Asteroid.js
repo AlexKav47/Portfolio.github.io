@@ -81,7 +81,7 @@ class AsteroidSpawner{
 
 			const collisionDistance = 50;
 			if (squaredDistance < collisionDistance * collisionDistance) {
-				console.log("collision");
+				this.collisionCallback();
 			}
 		}
 	}
@@ -96,7 +96,14 @@ class AsteroidSpawner{
 		this.asteroids.push(asteroid);
 	}
 
+	setOnCollisionCallback(callback){
+		this.collisionCallback = callback;
+	}
 
+	restart(){
+		this.asteroids = []
+		this.spawnInitialAsteroids();
+	}
 
 
 }
