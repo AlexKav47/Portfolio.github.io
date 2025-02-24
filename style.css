@@ -20,7 +20,7 @@ body {
 
 header {
   background: rgba(0, 0, 0, 0.8);
-  padding: 20px 0;
+  padding: 2px 0;
   border-bottom: 1px solid #444;
 }
 .header-container {
@@ -47,22 +47,8 @@ header nav ul li a:hover {
   color: #bbb;
 }
 
-#intro {
-  padding: 80px 0;
-  text-align: center;
-}
-#intro h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-#intro p {
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 #projects, #art {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 #projects h2, #art h2 {
