@@ -10,9 +10,10 @@ header {
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  background-color: #e8c996; 
+  background-color: #7448a9; 
   color: #242424;
   padding: 20px;
+  opacity: 75%;
 }
 
 .header-left h1 {
@@ -30,16 +31,15 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f0f0;
   color: #333;
-  background: url('Images/Website_Bakgroun.jpg') no-repeat center center fixed;
+  background: url('Images/7862bb3aa69a428d80f87bf208beb43e.jpg') no-repeat center center fixed;
   background-size: cover;
 }
-
 
 /* Canvas Styling */
 canvas {
   border: 1px solid #ccc;
   background: url('Images/Game_Background.jpg') no-repeat center center fixed;
-  background-size:contain;
+  background-size: contain;
   width: 500px;
   height: 500px;
   margin-left: auto;
@@ -48,4 +48,37 @@ canvas {
   padding-bottom: 50;
   margin-top: 3%;
   margin-bottom: 3%;
+}
+
+.rounded-box {
+  width: 300px;
+  height: 480px;
+  background-color: #000000a9;
+  border-radius: 20px; /* Makes the corners rounded */
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Ensures vertical stacking */
+  justify-content: flex-start; /* Aligns text to the top */
+  align-items: center; /* Centers horizontally */
+  padding: 20px; /* Adds inner spacing */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Prevents overflow issues */
+}
+
+.box-container {
+  position: absolute;
+  top: 50%;
+  left: calc(-17% + 270px); /* Adjusts based on the canvas width */
+  transform: translateY(-38%);
+}
+
+.rounded-box p {
+  display: block; /* Ensures paragraphs stay in block format */
+  margin-bottom: 15px; /* Adjusts space between sentences */
+  width: 90%; /* Prevents unwanted wrapping */
+  text-align: center; /* Keeps text centered */
+  line-height: 1.6; /* Improves readability */
+  font-size: 14px;
 }

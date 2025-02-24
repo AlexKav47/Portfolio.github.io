@@ -14,8 +14,24 @@
     </div>
   </header>
 <body>
-	<canvas id="gameCanvas" width="800" height="800">
-	</canvas>
+
+	<div class="box-container">
+        <div class="rounded-box">
+			<p>My asteroid game is a simple but fun 2D space shooter built with JavaScript and the 
+				Canvas API. The player controls a spaceship that moves up and down while shooting 
+				bullets to destroy incoming asteroids.</p> 
+				
+				<p>They spawn from the right side at random speeds 
+				and sizes, and if one hits the player, the game resets. There's basic collision detection 
+				for both the player and bullets, a score system, and a game loop that handles starting, 
+				playing, and game over states. </p> 
+				
+				<p>The asteroid spawner keeps things dynamic, 
+				making for a fast-paced and replayable arcade-style experience.</p>
+        </div>
+    </div>
+
+	<canvas id="gameCanvas" width="800" height="800"></canvas>
 
 	<script src="Asteroid.js"></script>
 	<script src="Player.js"></script>
